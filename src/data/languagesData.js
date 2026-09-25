@@ -1,9 +1,21 @@
-// CodLingo Multi-Language Curriculum Database
-// Every card includes both 3D Flashcard Learn data AND an integrated 4-Option Quiz!
+// CodLingo Multi-Track Curriculum Database
+// Includes Programming Languages, DSA (Data Structures & Algorithms), and Aptitude/Reasoning tracks!
+
+import { DSA_UNITS, DSA_CARDS } from './dsaCurriculum';
+import { APTITUDE_UNITS, APTITUDE_CARDS } from './aptitudeCurriculum';
+
+export const TRACK_CATEGORIES = [
+  { id: 'all', name: 'All Tracks', icon: '🌟' },
+  { id: 'prog', name: 'Coding & Web', icon: '💻' },
+  { id: 'dsa', name: 'DSA & Algorithms', icon: '⚡' },
+  { id: 'apt', name: 'Interview Aptitude', icon: '🧠' }
+];
 
 export const LANGUAGES = [
+  // Coding & Web
   {
     id: 'c',
+    category: 'prog',
     name: 'C',
     symbol: 'C',
     emoji: '🦀',
@@ -14,6 +26,7 @@ export const LANGUAGES = [
   },
   {
     id: 'python',
+    category: 'prog',
     name: 'Python',
     symbol: 'Py',
     emoji: '🐍',
@@ -24,6 +37,7 @@ export const LANGUAGES = [
   },
   {
     id: 'cpp',
+    category: 'prog',
     name: 'C++',
     symbol: 'C++',
     emoji: '⚡',
@@ -34,6 +48,7 @@ export const LANGUAGES = [
   },
   {
     id: 'java',
+    category: 'prog',
     name: 'Java',
     symbol: '☕',
     emoji: '☕',
@@ -44,6 +59,7 @@ export const LANGUAGES = [
   },
   {
     id: 'sql',
+    category: 'prog',
     name: 'SQL',
     symbol: 'SQL',
     emoji: '🗄️',
@@ -54,6 +70,7 @@ export const LANGUAGES = [
   },
   {
     id: 'nosql',
+    category: 'prog',
     name: 'NoSQL',
     symbol: 'NoSQL',
     emoji: '🍃',
@@ -64,6 +81,7 @@ export const LANGUAGES = [
   },
   {
     id: 'html',
+    category: 'prog',
     name: 'HTML5',
     symbol: 'HTML',
     emoji: '🌐',
@@ -74,6 +92,7 @@ export const LANGUAGES = [
   },
   {
     id: 'css',
+    category: 'prog',
     name: 'CSS3',
     symbol: 'CSS',
     emoji: '🎨',
@@ -81,10 +100,48 @@ export const LANGUAGES = [
     themeColor: '#ec4899',
     accentColor: 'from-pink-500 to-rose-600',
     tagline: 'Flexbox, CSS Grid, animations, selectors, and responsive design'
+  },
+
+  // DSA Track
+  {
+    id: 'dsa',
+    category: 'dsa',
+    name: 'DSA & Algorithms',
+    symbol: 'DSA',
+    emoji: '🧮',
+    mascotName: 'Algo the Tree Owl',
+    themeColor: '#6366f1',
+    accentColor: 'from-indigo-600 to-blue-700',
+    tagline: 'Two pointers, sliding window, cycle detection, trees, DP & Big-O'
+  },
+
+  // Aptitude Track
+  {
+    id: 'aptitude',
+    category: 'apt',
+    name: 'Aptitude & Logic',
+    symbol: 'APT',
+    emoji: '🧠',
+    mascotName: 'Newton the Brainiac',
+    themeColor: '#f59e0b',
+    accentColor: 'from-amber-500 to-orange-600',
+    tagline: 'Time & work, relative speed, dice probability, clock angles & logic'
   }
 ];
 
 export const CURRICULUM_BY_LANG = {
+  // DSA TRACK
+  dsa: {
+    units: DSA_UNITS,
+    cards: DSA_CARDS
+  },
+
+  // APTITUDE TRACK
+  aptitude: {
+    units: APTITUDE_UNITS,
+    cards: APTITUDE_CARDS
+  },
+
   // ================= C =================
   c: {
     units: [
@@ -102,7 +159,7 @@ export const CURRICULUM_BY_LANG = {
         title: 'Pointers & Addresses (Boss Level)',
         description: 'Address-of &, dereference *, pointer arithmetic, and NULL safety.',
         color: 'from-amber-500 to-orange-600',
-        cards: ['c-10', 'c-11', 'c-12', 'c-13', 'c-14']
+        cards: ['c-10', 'c-11']
       }
     ],
     cards: [

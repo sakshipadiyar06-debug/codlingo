@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X, Check, Sparkles, BookOpen } from 'lucide-react';
-import { LANGUAGES } from '../data/languagesData';
+import { LANGUAGES, TRACK_CATEGORIES } from '../data/languagesData';
 import { sound } from '../utils/audio';
 
 export const LanguageSelectorModal = ({
@@ -11,23 +11,30 @@ export const LanguageSelectorModal = ({
 }) => {
   if (!isOpen) return null;
 
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const filteredTracks =
+    activeCategory === 'all'
+      ? LANGUAGES
+      : LANGUAGES.filter((l) => l.category === activeCategory);
+
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs select-none animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-md select-none animate-fade-in"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white w-full max-w-lg rounded-3xl border-4 border-[#e5e5e5] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+        className="bg-white w-full max-w-xl rounded-3xl border-4 border-[#e5e5e5] shadow-2xl overflow-hidden flex flex-col max-h-[92vh]"
       >
         {/* Header */}
-        <div className="p-5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white flex items-center justify-between">
+        <div className="p-5 bg-gradient-to-r from-emerald-500 via-teal-500 to-indigo-600 text-white flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="text-2xl">🌍</span>
+            <span className="text-2xl">⚡</span>
             <div>
-              <h3 className="text-xl font-black">Choose a Course</h3>
+              <h3 className="text-xl font-black">Choose Your CodLingo Track</h3>
               <p className="text-xs text-emerald-100 font-bold">
-                Learn multiple programming languages with one streak!
+                Languages, Data Structures & Algorithms, and Placement Aptitude
               </p>
             </div>
           </div>
@@ -42,9 +49,33 @@ export const LanguageSelectorModal = ({
           </button>
         </div>
 
-        {/* Language Grid */}
+        {/* Category Filter Pills */}
+        <div className="p-2.5 bg-gray-100 border-b border-gray-200 flex items-center gap-1.5 overflow-x-auto">
+          {TRACK_CATEGORIES.map((cat) => {
+            const isActive = activeCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => {
+                  sound.playPop();
+                  setActiveCategory(cat.id);
+                }}
+                className={`px-3 py-1.5 rounded-xl text-xs font-black shrink-0 transition-all cursor-pointer flex items-center gap-1.5 ${
+                  isActive
+                    ? 'bg-emerald-600 text-white shadow-xs'
+                    : 'bg-white text-gray-600 hover:text-gray-900 border border-gray-200'
+                }`}
+              >
+                <span>{cat.icon}</span>
+                <span>{cat.name}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Track Grid */}
         <div className="p-5 grid grid-cols-1 sm:grid-cols-2 gap-3 overflow-y-auto">
-          {LANGUAGES.map((lang) => {
+          {filteredTracks.map((lang) => {
             const isSelected = lang.id === currentLanguage;
             return (
               <button
@@ -84,9 +115,9 @@ export const LanguageSelectorModal = ({
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-gray-50 border-t border-gray-200 text-center">
+        <div className="p-3.5 bg-gray-50 border-t border-gray-200 text-center">
           <p className="text-xs font-bold text-gray-500">
-            🔥 Your daily streak & gems are shared across all programming courses!
+            🔥 Your streak, hearts & gems are shared across all 10 tracks!
           </p>
         </div>
       </div>
