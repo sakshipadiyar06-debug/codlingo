@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-rounded: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-rounded);
+    background-color: #f7f9fa;
+    color: #3c3c3c;
+    user-select: none;
+    -webkit-user-select: none;
+    overflow-x: hidden;
+  }
+}
+
+/* Duolingo-styled 3D Buttons & Elements */
+.duo-btn {
+  transition: all 0.1s ease;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.duo-btn:active {
+  transform: translateY(4px);
+}
+
+.duo-btn-green {
+  background-color: #58cc02;
+  color: #ffffff;
+  border-bottom: 4px solid #46a302;
+}
+.duo-btn-green:hover {
+  background-color: #61e002;
+}
+.duo-btn-green:active {
+  border-bottom-width: 0px;
+}
+
+.duo-btn-blue {
+  background-color: #1cb0f6;
+  color: #ffffff;
+  border-bottom: 4px solid #1899d6;
+}
+.duo-btn-blue:hover {
+  background-color: #2ec5ff;
+}
+.duo-btn-blue:active {
+  border-bottom-width: 0px;
+}
+
+.duo-btn-orange {
+  background-color: #ff9600;
+  color: #ffffff;
+  border-bottom: 4px solid #e07900;
+}
+.duo-btn-orange:hover {
+  background-color: #ffa826;
+}
+.duo-btn-orange:active {
+  border-bottom-width: 0px;
+}
+
+.duo-btn-red {
+  background-color: #ff4b4b;
+  color: #ffffff;
+  border-bottom: 4px solid #ea2b2b;
+}
+.duo-btn-red:hover {
+  background-color: #ff6161;
+}
+.duo-btn-red:active {
+  border-bottom-width: 0px;
+}
+
+.duo-btn-outline {
+  background-color: #ffffff;
+  color: #afafaf;
+  border: 2px solid #e5e5e5;
+  border-bottom: 4px solid #e5e5e5;
+}
+.duo-btn-outline:hover {
+  background-color: #f7f7f7;
+  color: #777777;
+}
+.duo-btn-outline:active {
+  border-bottom-width: 2px;
+}
+
+/* 3D Card flip utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Smooth pulse & wiggle */
+@keyframes flameWiggle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-6deg); }
+  75% { transform: scale(1.1) rotate(6deg); }
+}
+
+.animate-flame {
+  animation: flameWiggle 1.8s infinite ease-in-out;
+}
+
+@keyframes mascotBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-mascot {
+  animation: mascotBounce 2.5s infinite ease-in-out;
+}
