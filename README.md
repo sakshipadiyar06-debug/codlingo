@@ -1,15 +1,3 @@
-# ⚡ CodLingo
-
-> **Learn to code ** — Streaks, flashcards, quizzes, and game drills for 10 programming languages.
-
-![CodLingo Banner](https://img.shields.io/badge/CodLingo-Learn%20to%20Code-%2358CC02?style=for-the-badge&logo=lightning&logoColor=white)
-![React](https://img.shields.io/badge/React-19-%2361DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-6-%23646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-%2306B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-%23FFD700?style=for-the-badge)
-
----
-
 ## 🎯 What is CodLingo?
 
 CodLingo is a **gamified coding education app** . Learn programming through interactive flashcards, 4-option quizzes, and game drills — with daily streaks, XP, gems, and a leaderboard system to keep you motivated every single day.
