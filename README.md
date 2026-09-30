@@ -1,6 +1,6 @@
 # ⚡ CodLingo
 
-> **Learn to code the Duolingo way** — Streaks, flashcards, quizzes, and game drills for 10 programming languages.
+> **Learn to code ** — Streaks, flashcards, quizzes, and game drills for 10 programming languages.
 
 ![CodLingo Banner](https://img.shields.io/badge/CodLingo-Learn%20to%20Code-%2358CC02?style=for-the-badge&logo=lightning&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-%2361DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -12,7 +12,7 @@
 
 ## 🎯 What is CodLingo?
 
-CodLingo is a **gamified coding education app** inspired by Duolingo. Learn programming through interactive flashcards, 4-option quizzes, and game drills — with daily streaks, XP, gems, and a leaderboard system to keep you motivated every single day.
+CodLingo is a **gamified coding education app** . Learn programming through interactive flashcards, 4-option quizzes, and game drills — with daily streaks, XP, gems, and a leaderboard system to keep you motivated every single day.
 
 ---
 
